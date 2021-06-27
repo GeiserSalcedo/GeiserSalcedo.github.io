@@ -1,0 +1,13 @@
+body{
+    width: 960px;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+#miCanvas{
+    border:dotted 2px yellow;
+    background: #9B59B6;
+}

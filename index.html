@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pacientes</title>
+
+<link rel="stylesheet" type="text/css" href="librerias/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/themes/default.css">
+<link rel="stylesheet" type="text/css" href="librerias/alertifyjs/css/alertify.css">
+<link rel="stylesheet" type="text/css" href="librerias/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="librerias/fontawesome/css/all.css">
+
+<script src="librerias/js/jquery-3.6.0.min.js"></script>
+<script src="librerias/alertifyjs/alertify.js"></script>
+
+</head>
+<body>
+    <br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel panel-heading">Login</div>
+                    <div class="panel panel-body">
+                        <div style="text-align: center;">
+                            <img src="img/libreta.jpg" alt="libreta" width="200px" height="150px">
+                        </div>
+                        <p></p>
+                        <label for="">Usuario</label>
+                        <input type="text" id="usuario" class="form-control input-sm">
+                        <label for="">Password</label>
+                        <input type="password" id="pass" class="form-control input-sm">
+                        <p></p>
+                        <span class="btn btn-primary" id="entrarSistema">Ingresar</span>
+                        <a href="registro.php" class="btn btn-danger">Registrese</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#entrarSistema').click(function(){
+
+            if($('#usuario').val()==""){
+                alertify.alert("Debes colocar el usuario");
+                return false;
+            }else if($('#pass').val()==""){
+                alertify.alert("Debes colocar la clave");
+                return false;
+            }
+
+            cadena="usuario=" + $('#usuario').val() +
+                    "&pass=" + $('#pass').val();
+
+                    $.ajax({
+                        type:"POST",
+                        url:"php/login.php",
+                        data:cadena,
+                        success:function(r){
+                            if(r==1){
+                                window.location="incio.php";
+                            }else{
+                                alertify.alert("Fallo al Entrar");
+                            }
+                        }
+                    });
+        });
+    });
+
+</script>
