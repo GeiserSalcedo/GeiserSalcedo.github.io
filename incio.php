@@ -34,12 +34,11 @@
                     <hr>
                     <h2>Escoja una Opcion</h2>
                     <hr>
-                    <a href="php/memori.php"><h2><span class="fas fa-brain"></span><span class="tab-text">Juego de Memoria</h2></span></a>
-					<a href="php/drop.php"><h2><span class="fa fa-hands-wash"></span><span class="tab-text">Juego Arrastar y Soltar</h2></span></a>
-                    
-                    
+                    <a href="php/memori.php"><h2><span class="fas fa-brain"></span><span class="tab-text">  Juego de Memoria</h2></span></a>
+                    <a href="php/memoricolor.php"><h2><span class="fas fa-brain"></span><span class="tab-text">  Juego de Memoria de Colores</h2></span></a>
 
-
+					<a href="php/drop.php"><h2><span class="fa fa-hands-wash"></span><span class="tab-text">  Juego Arrastar y Soltar</h2></span></a>
+    
                 </div>
 
             </div>
